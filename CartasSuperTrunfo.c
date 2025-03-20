@@ -2,6 +2,10 @@
 
 int main () {
 
+    //Declaração das variáveis gerais
+    char opcao[2] = "";
+
+
     //Declaração das variáveis da cartão A
     char estadoA[4] = "A";
     char codigoCartaA[6] = "A01";
@@ -29,9 +33,42 @@ int main () {
     double superPoderB = 1;
     int placarB = 0;
 
-    //Mensagem inicial
-    printf("Bem-vindo! Vamos cadastrar duas cartas do nosso super trunfo de cidades.\n");
-    printf("\n");
+    //Menu do jogo
+    printf("Bem-vindo ao Super Trunfo de Cidades!\n");
+    printf("Menu principal\n");
+    printf("1 - Iniciar jogo\n");
+    printf("2 - Ver regras\n");
+    printf("3 - Sair\n");
+    printf("Digite a opção desejada:\n");
+    scanf("%2s", &opcao);
+
+    switch (opcao[0])
+    {
+    case '1':
+        printf("Iniciando jogo...\n");
+        break;
+
+    case '2':
+        printf("Regras do jogo:\n");
+        printf("1 - O jogo é composto por 3 rodadas.\n");
+        printf("2 - Cada rodada compara um atributo das cartas.\n");
+        printf("3 - O jogador que vencer mais rodadas é o vencedor.\n");
+        printf("4 - Em caso de empate, o jogo é decidido por sorteio.\n");
+        return 0;
+        break;
+
+    case '3':
+        printf("Saindo do jogo...\n");
+        return 0;
+        break;
+    
+    default:
+        printf("Opção inválida\n");
+        return 0;
+        break;
+    }
+
+
 
     //Cadastro da primeira carta
     printf("Vamos começar digitando os dados da primeira carta.\n");
